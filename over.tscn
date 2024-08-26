@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsxfrdywvxeij"]
+
+[ext_resource type="Script" path="res://over.gd" id="1_yfmgp"]
+
+[node name="over" type="CanvasLayer"]
+script = ExtResource("1_yfmgp")
+
+[node name="restart" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="quit" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0

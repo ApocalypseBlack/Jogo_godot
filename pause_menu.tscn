@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2x7ttq8fvekn"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_g4d0h"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_g4d0h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_priority = 23
+process_physics_priority = 24
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 3
+texture_filter = 3
+texture_repeat = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -27.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("voltar_bt")
+mouse_default_cursor_shape = 1
+
+[node name="quit_bt" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 0.0156863, 0.0862745, 1)
+self_modulate = Color(1, 0.996078, 1, 1)
+layout_mode = 2
+text = "Leave Game
+"
+
+[node name="restart_bt" type="Button" parent="VBoxContainer"]
+modulate = Color(0.964706, 0.345098, 0.0313726, 1)
+layout_mode = 2
+mouse_default_cursor_shape = 6
+button_mask = 5
+keep_pressed_outside = true
+text = "Restart game"
+
+[node name="voltar_bt" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 0.101961, 1, 1)
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/quit_bt" to="." method="_on_quit_bt_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart_bt" to="." method="_on_restart_bt_pressed"]
+[connection signal="pressed" from="VBoxContainer/voltar_bt" to="." method="_on_voltar_bt_pressed"]
